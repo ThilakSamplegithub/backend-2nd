@@ -3,7 +3,7 @@ const bcrypt=require("bcrypt")
 const jwt=require("jsonwebtoken")
 const userRouter=Router()
 const {userModel}=require("../Models/user.models")
-userRouter.post("/api/register",async(req,res)=>{
+userRouter.post("/register",async(req,res)=>{
    try{
     const{email,password,userName,avatar}=req.body
      bcrypt.hash(password,5,async(err,hashed)=>{
@@ -24,7 +24,7 @@ userRouter.post("/api/register",async(req,res)=>{
     res.status(400).send({err:err.message})
    }
 })
-userRouter.post("/api/login",async(req,res)=>{
+userRouter.post("/login",async(req,res)=>{
 try{
   const {email,password}=req.body
    const user= await userModel.findOne({email})

@@ -11,9 +11,9 @@ app.use(cors())
 app.get("/",(req,res)=>{
     res.send("hello world")
 })
-app.use("/user",userRouter)
+app.use("/api",userRouter)
 app.use(authMiddleware)
-app.use("/blog",blogRouter)
+app.use("/blogs",blogRouter)
 app.listen(process.env.PORT,async()=>{
     try{
         await connection

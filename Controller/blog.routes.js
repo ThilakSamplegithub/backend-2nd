@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const blogRouter = Router();
 const { blogsModel } = require("../Models/blog.model");
-blogRouter.post("/api/blogs/add", async (req, res) => {
+blogRouter.post("/api/add", async (req, res) => {
   try {
     // let date = new Date(Date.UTC(2023, 11, 20, 3, 0, 0));
     let {userName,userId,title, content, category,date} = req.body;
