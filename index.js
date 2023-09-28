@@ -13,7 +13,7 @@ app.get("/",(req,res)=>{
 })
 app.use("/api",userRouter)
 app.use(authMiddleware)
-app.use("/blogs",blogRouter)
+app.use("/blog",blogRouter)
 app.listen(process.env.PORT,async()=>{
     try{
         await connection
